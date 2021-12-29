@@ -3,9 +3,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <a href="/SpringProject/shop/product/list.do">상품목록</a>
+<a href="/SpringProject/shop/cart/list.do">장바구니</a>
 <div style="text-align:right;">
 <c:choose>
 	<c:when test="${sessionScope.userid ==null }">
+		<a href="/SpringProject/member/signUp.do">회원가입</a>
 		<a href="/SpringProject/member/login.do">로그인</a>
 		<a href="/SpringProject/admin/login.do">관리자 로그인</a>
 	</c:when>

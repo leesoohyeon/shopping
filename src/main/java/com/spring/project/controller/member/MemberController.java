@@ -46,4 +46,9 @@ public class MemberController {
 		mav.addObject("message", "logout");
 		return mav;
 	}
+	
+	@RequestMapping("signUp.do")
+	public String signup() {
+		return "member/signup";
+	}
 }

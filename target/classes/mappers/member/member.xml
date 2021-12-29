@@ -6,4 +6,9 @@
 		from member
 		where userid=#{userid} and passwd=#{passwd}
 	</select>
+		
+	<insert id="signup">
+		insert into member (userid,passwd,name,email,adress) vlaue
+		(#{userid}, #{passwd}, #{name}, #{email}, #{adress})
+	</insert>
 </mapper>
