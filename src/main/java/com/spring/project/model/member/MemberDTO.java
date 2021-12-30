@@ -4,7 +4,7 @@ public class MemberDTO {
 	private String userid;
 	private String passwd;
 	private String name;
-	private String emil;
+	private String email;
 	private String adress;
 	public String getUserid() {
 		return userid;
@@ -24,12 +24,11 @@ public class MemberDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	public String getEmil() {
-		return emil;
+	public String getEmail() {
+		return email;
 	}
-	public void setEmil(String emil) {
-		this.emil = emil;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getAdress() {
 		return adress;

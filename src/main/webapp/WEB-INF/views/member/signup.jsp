@@ -5,7 +5,45 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	$("#btnsignup").click(function(){
+		var name = $("#name").val()
+		var userid = $("#userid").val();
+		var passwd = $("#passwd").val();
+		var eamil = $("#email").val();
+		var adress = $("#adress").val();
+		if(name == ""){
+			alert("이름을 입력하세요.");
+			$("#name").focus()
+			return;
+		}
+		if(userid == ""){
+			alert("아이디를 입력하세요.");
+			$("#userid").focus();
+			return;
+		}
+		if(passwd == ""){
+			alert("비밀번호를 입력하세요.");
+			$("#passwd").focus();
+			return;
+		}
+		if(email == ""){
+			alert("이메일을 입력하세요.");
+			$("#email").focus();
+			return;
+		}
+		if(adress == ""){
+			alert("주소를 입력하세요.");
+			$("#adress").focus();
+			return;
+		}
+		document.form1.action="/SpringProject/member/memberAdd.do";
+		document.form1.submit();
+	});
+});
+</script>
 </head>
 <body>
 <%@ include file="../include/menu.jsp" %>
@@ -18,11 +56,11 @@
 	</tr>
 	<tr>
 		<td>아이디</td>
-		<td><input id="signid" name="signid"></td>
+		<td><input id="userid" name="userid"></td>
 	</tr>
 	<tr>
 		<td>비밀번호</td>
-		<td><input id="passwd" name="passwd"></td>
+		<td><input type="password" id="passwd" name="passwd"></td>
 	</tr>
 	<tr>
 		<td>이메일</td>
@@ -31,7 +69,6 @@
 	<tr>
 		<td>주소</td>
 		<td><input id="adress" name="adress"><button>주소찾기</button><br>
-			<input id="adress1" name="adress1">
 		</td>
 	</tr>
 </table>

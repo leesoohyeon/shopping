@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.project.model.member.MemberDAO;
@@ -46,9 +47,5 @@ public class MemberController {
 		mav.addObject("message", "logout");
 		return mav;
 	}
-	
-	@RequestMapping("signUp.do")
-	public String signup() {
-		return "member/signup";
-	}
+
 }
