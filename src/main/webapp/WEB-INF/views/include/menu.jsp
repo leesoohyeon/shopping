@@ -4,6 +4,7 @@
 
 <a href="/SpringProject/shop/product/list.do">상품목록</a>
 <a href="/SpringProject/shop/cart/list.do">장바구니</a>
+<a href="/SpringProject/board/board/list.do">게시판</a>
 <div style="text-align:right;">
 <c:choose>
 	<c:when test="${sessionScope.userid ==null }">
