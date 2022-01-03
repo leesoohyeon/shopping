@@ -7,4 +7,7 @@ public interface BoardDAO {
 	void insert(BoardDTO dto);
 	public BoardDTO detail(int idx);
 	void update(BoardDTO dto);
+	void delete(int idx);
+	int countBoard();
+	List<BoardDTO> selectBoard(paggingDTO pagging);
 }

@@ -16,7 +16,20 @@
 
 <update id="update">
 	update board set title=#{title},
-	contents=#{contents}, writer=#{writer},
+	contents=#{contents}, writer=#{writer}
 	where idx=#{idx}
 </update>
+
+<delete id="delete">
+	delete from board where idx=#{idx}
+</delete>
+
+<select id="countBoard" resultType="int">
+	select count(*) from board
+</select>
+
+<select id="selectBoard" resultType="com.spring.project.model.board.BoardDTO">
+	select * from (select rownum rn, a.* from (select * from board order by idx desc) a where
+	 rn between #{startPage} and #{recordsPerPage}
+</select>
 </mapper>

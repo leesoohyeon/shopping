@@ -1,5 +1,6 @@
 package com.spring.project.model.board;
 
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -31,6 +32,21 @@ public class BoardDAOImpl implements BoardDAO {
 	@Override
 	public void update(BoardDTO dto) {
 		sqlSession.update("board.update", dto);
+	}
+
+	@Override
+	public void delete(int idx) {
+		sqlSession.delete("board.delete", idx);
+	}
+
+	@Override
+	public int countBoard() {
+		return sqlSession.selectOne("board.countBoard");
+	}
+
+	@Override
+	public List<BoardDTO> selectBoard(paggingDTO pagging) {
+		return sqlSession.selectList("board.selectBoard", pagging);
 	}
 	
 	

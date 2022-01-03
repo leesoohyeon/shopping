@@ -33,6 +33,8 @@ $(function(){
 			<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${list.redate}"/></td>
 			<td>${list.writer}</td>
 			<td>${list.hit}</td>
+			<td><a href="/SpringProject/board/board/edit/${list.idx}">수정하기</a></td>
+			<td><a href="/SpringProject/board/board/delete.do?idx=${list.idx}">삭제</a></td>
 		</tr>
 	
 	</c:forEach>

@@ -26,7 +26,7 @@ function board_update(){
 		document.form1.contents.focus();
 		return;
 	}
-	document.form1.action="SpringProject/board/board/update.do";
+	document.form1.action="/SpringProject/board/board/update.do";
 	document.form1.submit();
 }
 </script>
@@ -47,6 +47,7 @@ function board_update(){
 		<td><input name="contents" value="${dto.contents}"/></td>
 	</tr>
 </table>
+<input type="hidden" name="idx" value="${dto.idx}">
 <input type="button" value="수정하기" onclick="board_update()">
 </form>
 </body>
