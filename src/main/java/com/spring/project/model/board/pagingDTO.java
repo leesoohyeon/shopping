@@ -1,21 +1,21 @@
 package com.spring.project.model.board;
 
-public class paggingDTO {
-	private int nowPage;
-	private int startPage;
-	private int endPage;
-	private int total;
-	private int cntPerPage;
-	private int lastPage;
-	private int start;
-	private int end;
+public class pagingDTO {
+	private int nowPage; //현재페이지
+	private int startPage; //시작페이지
+	private int endPage; //끝페이지
+	private int total; //게시글 총 개수
+	private int cntPerPage; //페이지당 글 갯수
+	private int lastPage; //마지막 페이지
+	private int start; //sql문
+	private int end; //sql문
 	private int cntPage=5;
 	
-	public paggingDTO() {
+	public pagingDTO() {
 	}
 	
-	//제일 마지막 페이지  검사
-	public paggingDTO(int total, int nowPage, int cntPerPage) {
+
+	public pagingDTO(int total, int nowPage, int cntPerPage) {
 		setNowPage(nowPage);
 		setCntPerPage(cntPerPage);
 		setTotal(total);
@@ -24,6 +24,7 @@ public class paggingDTO {
 		calcStartEnd(getNowPage(), getCntPerPage());
 	}
 	
+	//제일 마지막 페이지  검사
 	public void calcLastPage(int total, int cntPerPage) {
 		setLastPage((int) Math.ceil((double)total/(double)cntPerPage));
 	}
@@ -41,8 +42,8 @@ public class paggingDTO {
 	}
 	
 	public void calcStartEnd(int nowpage, int cntPerPage) {
-		setEnd(nowPage*cntPerPage);
-		setStart(getEnd() - cntPerPage + 1);
+		setEnd(cntPerPage);
+		setStart(nowpage*cntPerPage);
 	}
 	
 	public int getNowPage() {

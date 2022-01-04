@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.project.model.board.BoardDAO;
 import com.spring.project.model.board.BoardDTO;
-import com.spring.project.model.board.paggingDTO;
+import com.spring.project.model.board.pagingDTO;
 
 @Controller
 @RequestMapping("/board/board/*")
@@ -65,8 +65,8 @@ public class BoardController {
 		return "redirect:/board/board/list.do";
 	}
 	
-	@RequestMapping("/boardList.do")
-	public String boardList(Model model, paggingDTO dto,
+	@GetMapping("boardList.do")
+	public String boardList(Model model, pagingDTO dto,
 			@RequestParam(value="nowPage", required=false)String nowPage,
 			@RequestParam(value="cntPerPage", required=false)String cntPerPage){
 		int total = BoardDao.countBoard();
@@ -78,7 +78,7 @@ public class BoardController {
 		} else if(cntPerPage == null) {
 			cntPerPage = "5";
 		}
-		dto = new paggingDTO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		dto = new pagingDTO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		model.addAttribute("paging",dto);
 		model.addAttribute("viewAll", BoardDao.selectBoard(dto));
 		return "board/boardPaging";

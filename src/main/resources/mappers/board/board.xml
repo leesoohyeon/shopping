@@ -29,7 +29,6 @@
 </select>
 
 <select id="selectBoard" resultType="com.spring.project.model.board.BoardDTO">
-	select * from (select rownum rn, a.* from (select * from board order by idx desc) a where
-	 rn between #{startPage} and #{recordsPerPage}
+	select * from board order by idx desc limit #{start},#{end}
 </select>
 </mapper>

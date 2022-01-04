@@ -45,8 +45,8 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public List<BoardDTO> selectBoard(paggingDTO pagging) {
-		return sqlSession.selectList("board.selectBoard", pagging);
+	public List<BoardDTO> selectBoard(pagingDTO paging) {
+		return sqlSession.selectList("board.selectBoard", paging);
 	}
 	
 	

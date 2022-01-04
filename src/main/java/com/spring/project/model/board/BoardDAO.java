@@ -9,5 +9,5 @@ public interface BoardDAO {
 	void update(BoardDTO dto);
 	void delete(int idx);
 	int countBoard();
-	List<BoardDTO> selectBoard(paggingDTO pagging);
+	List<BoardDTO> selectBoard(pagingDTO paging);
 }
