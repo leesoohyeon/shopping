@@ -11,4 +11,13 @@
 		insert into member (userid,passwd,name,email,adress) value
 		(#{userid}, #{passwd}, #{name}, #{email}, #{adress})
 	</insert>
+	
+	<update id="update">
+		update member set name=#{name}, email=#{email}, adress=#{adress}, passwd=#{passwd}
+		where userid=#{userid}
+	</update>
+	
+	<select id="profile" resultType="com.spring.project.model.member.MemberDTO">
+		select * from member where userid=#{userid}
+	</select>
 </mapper>

@@ -21,5 +21,16 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlSession.insert("member.signup", dto);
 	}
 	
+
+	@Override
+	public MemberDTO profile(String userid) {
+		return sqlSession.selectOne("member.profile", userid);
+	}
+
+	@Override
+	public void update(MemberDTO dto) {
+		sqlSession.update("member.update", dto);
+	}
+	
 	
 }

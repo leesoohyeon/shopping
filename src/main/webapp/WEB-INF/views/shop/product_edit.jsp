@@ -31,7 +31,7 @@ function product_update(){
 		document.form1.description.focus();
 		return;
 	}
-	document.form1.action="/StpringProject/shop/product/update.do";
+	document.form1.action="/SpringProject/shop/product/update.do";
 	document.form1.submit();
 }
 </script>

@@ -4,6 +4,7 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,7 +33,7 @@ public class MemberController {
 		}
 		ModelAndView mav=new ModelAndView();
 		if(name!=null) {
-			mav.setViewName("main");
+			mav.setViewName("home");
 		}else {
 			mav.setViewName("member/login");
 			mav.addObject("message", "error");
@@ -47,5 +48,18 @@ public class MemberController {
 		mav.addObject("message", "logout");
 		return mav;
 	}
-
+	
+	@RequestMapping("profile")
+	public ModelAndView profile(ModelAndView mav, String userid) {
+		mav.setViewName("/member/update");
+		mav.addObject("dto", memberDao.profile(userid));
+		return mav;
+		
+	}
+	
+	@RequestMapping("update")
+	public String update(MemberDTO dto) {
+		memberDao.update(dto);
+		return "redirect:/";
+	}
 }
