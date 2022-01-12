@@ -60,6 +60,6 @@ public class MemberController {
 	@RequestMapping("update")
 	public String update(MemberDTO dto) {
 		memberDao.update(dto);
-		return "redirect:home";
+		return "redirect:/";
 	}
 }
