@@ -25,6 +25,7 @@ function memberupdate(){
 		document.form1.adress.focus();
 		return;
 	}
+	alert("회원정보가 수정되었습니다.");
 	document.form1.action="/SpringProject/member/update"
 	document.form1.submit();
 }
@@ -35,20 +36,23 @@ function memberupdate(){
 <form name="form1" method="post">
 <table border="1" width="400px">
 	<tr>
+		<td>아이디</td>
+		<td><input name="userid" readonly="readonly" value="${model.userid}"></td>
+	</tr>
+	<tr>
 		<td>비밀번호</td>
-		<td><input type="password" id="passwd" name="passwd" value="${dto.passwd}"></td>
+		<td><input type="password" name="passwd" value="${model.passwd}"></td>
 	</tr>
 	<tr>
 		<td>이메일</td>
-		<td><input id="email" name="email" value="${dto.email}"></td>
+		<td><input  name="email" value="${model.email}"></td>
 	</tr>
 	<tr>
 		<td>주소</td>
-		<td><input id="adress" name="adress" value="${dto.adress}"></td>
+		<td><input name="adress" value="${model.adress}"></td>
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<input type="hidden" name="userid" value="${dto.userid}">
 			<input type="button" value="수정하기" onclick="memberupdate()">
 		</td>
 	</tr>

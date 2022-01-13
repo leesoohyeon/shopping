@@ -14,7 +14,7 @@ function product_delete(){
 }
 function product_update(){
 	var product_name=document.form1.product_name.value;
-	var price=ddocument.form1.price.value;
+	var price=document.form1.price.value;
 	var description=document.form1.description.value;
 	if(product_name==""){
 		alert("상품명을 입력하세요.");
@@ -26,7 +26,7 @@ function product_update(){
 		document.form1.price.focus();
 		return;
 	}
-	if(descripton==""){
+	if(description==""){
 		alert("상품설명을 입력하세요.");
 		document.form1.description.focus();
 		return;

@@ -8,7 +8,7 @@
 <script>
 function product_write(){
 	var product_name=document.form1.product_name.value;
-	var price=document.form1.prica.value;
+	var price=document.form1.price.value;
 	var description=document.form1.description.value;
 	if(product_name=""){
 		alert("상품명을 입력하세요.");
@@ -53,7 +53,7 @@ function product_write(){
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-		<input type="button" value="등록" onclick="product_writer()">
+		<input type="button" value="등록" onclick="product_write()">
 		</td>
 	</tr>
 </table>

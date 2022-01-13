@@ -13,7 +13,7 @@
 	</insert>
 	
 	<update id="update">
-		update member set name=#{name}, email=#{email}, adress=#{adress}, passwd=#{passwd}
+		update member set email=#{email}, adress=#{adress}, passwd=#{passwd}
 		where userid=#{userid}
 	</update>
 	
