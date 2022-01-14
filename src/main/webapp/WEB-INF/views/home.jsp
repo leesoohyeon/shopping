@@ -39,7 +39,7 @@
 			</li>
 			<li><a href="#">마이페이지</a>
 				<ul>
-					<li><a href="/SpringProject/member/profile?userid=${sessionScope.userid}">회원정보 수정</a></li>
+					<li><a href="/SpringProject/member/profile">회원정보 수정</a></li>
 					<li><a href="/SpringProject/shop/cart/list.do">장바구니</a>
 				</ul>
 			</li>

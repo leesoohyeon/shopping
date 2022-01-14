@@ -53,10 +53,16 @@ public class MemberController {
 	}
 	
 	@RequestMapping("profile")
-	public ModelAndView profile(@RequestParam String userid, ModelAndView mav) {
-		mav.setViewName("member/update");
-		mav.addObject("model", memberDao.profile(userid));
-		return mav;
+	public ModelAndView profile(HttpSession session, ModelAndView mav) {
+		String userid=(String)session.getAttribute("userid");
+		if(userid!=null) {
+			mav.setViewName("member/update");
+			mav.addObject("model", memberDao.profile(userid));
+			return mav;
+		}else {
+			return new ModelAndView("member/login");
+		}
+		
 		
 	}
 	
