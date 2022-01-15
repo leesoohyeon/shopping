@@ -26,11 +26,11 @@ public class AdminController {
 	public ModelAndView login_check(MemberDTO dto, HttpSession session, ModelAndView mav) {
 		String name = adminDao.login(dto);
 		if(name!=null) {
-			session.setAttribute("admin_userid", dto.getUserid());
+			session.setAttribute("admin_adminid", dto.getAdminid());
 			session.setAttribute("admin_name", name);
-			session.setAttribute("userid", dto.getUserid());
+			session.setAttribute("adminid", dto.getAdminid());
 			session.setAttribute("name", name);;
-			mav.setViewName("admin/admin");
+			mav.setViewName("home");
 			mav.addObject("message","success");
 		}else {
 			mav.setViewName("admin/login");

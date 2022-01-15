@@ -6,6 +6,14 @@ public class MemberDTO {
 	private String name;
 	private String email;
 	private String adress;
+	private String adminid;
+	
+	public String getAdminid() {
+		return adminid;
+	}
+	public void setAdminid(String adminid) {
+		this.adminid = adminid;
+	}
 	public String getUserid() {
 		return userid;
 	}

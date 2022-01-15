@@ -4,6 +4,6 @@
 	<select id="login" resultType="String">
 		select name
 		from admin
-		where userid=#{userid} and passwd=#{passwd}
+		where adminid=#{adminid} and passwd=#{passwd}
 	</select>
 </mapper>

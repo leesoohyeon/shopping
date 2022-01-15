@@ -17,7 +17,7 @@ $(function(){
 </script>
 </head>
 <body>
-<h2>게시판 리스트</h2>
+<h2>공지사항</h2>
 <table>
 	<tr>
 		<th>&nbsp;</th>
@@ -39,6 +39,8 @@ $(function(){
 	
 	</c:forEach>
 </table>
+<c:if test="${sessionScope.adminid != null}">
 <button type="button" id="listAdd">게시글작성</button>
+</c:if>
 </body>
 </html>

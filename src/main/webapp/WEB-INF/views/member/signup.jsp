@@ -46,7 +46,7 @@ $(function(){
 </script>
 </head>
 <body>
-<%@ include file="../include/menu.jsp" %>
+<%@ include file="../home.jsp" %>
 <h2>회원가입</h2>
 <form name="form1" method="post">
 <table border="1" width="700px">

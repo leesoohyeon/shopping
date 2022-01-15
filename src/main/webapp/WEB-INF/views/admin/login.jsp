@@ -10,11 +10,11 @@
 <script>
 $(function(){
 	$("#btnLogin").click(function(){
-		var userid = $("#userid").val();
+		var adminid = $("#adminid").val();
 		var passwd = $("#passwd").val();
-		if (userid ==""){
+		if (adminid ==""){
 			alert("아이디를 입력하세요");
-			$("#userid").focus();
+			$("#adminod").focus();
 			return;
 		}
 		if (passwd ==""){
@@ -35,7 +35,7 @@ $(function(){
 		<table border="1" withd="400px">
 			<tr>
 				<td>아이디</td>
-				<td><input id="userid" name="userid"></td>
+				<td><input id="adminid" name="adminid"></td>
 			</tr>
 			<tr>
 				<td>비밀번호</td>
