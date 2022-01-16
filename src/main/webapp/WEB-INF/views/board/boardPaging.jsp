@@ -8,6 +8,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<link href="${pageContext.request.contextPath}/resources/board.css" rel="stylesheet" type="text/css">
+<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	$("#listAdd").click(function(){
+		location.href="/SpringProject/board/board/writer.do";
+	});
+});
+</script>
 <script>
 	function selChange(){
 		var sel = document.getElementById('cntPerPage').value;
@@ -15,6 +24,7 @@
 	}
 </script>
 <body>
+<%@ include file="../include/menu.jsp"%>
 <div>
 	<select id="cntPerPage" name="sel" onchange="selChange()">
 		<option value="5" <c:if test="${paging.cntPerPage ==5}">selected</c:if>>5줄보기</option>
@@ -23,10 +33,11 @@
 		<option value="20" <c:if test="${paging.cntPerPage ==20}">selected</c:if>>25줄보기</option>
 	</select>
 </div>
-<table border="1">
+<table>
 	<tr>
 		<td>NO</td>
 		<td>제목</td>
+		<td>내용</td>
 		<td>작성자</td>
 		<td>등록일</td>
 		<td>조회수</td>
@@ -34,7 +45,8 @@
 	<c:forEach items="${viewAll}" var="list">
 		<tr>
 			<td>${list.idx}</td>
-			<td>${list.title}</td>
+			<td><a href="/SpringProject/board/board/detail/${list.idx}">${list.title}</a></td>
+			<td>${list.contents}</td>
 			<td>${list.writer}</td>
 			<td><fmt:formatDate value="${list.redate}" pattern="yyyy.MM.dd"/></td>
 			<td>${list.hit}</td>
@@ -58,6 +70,9 @@
 	<c:if test="${paging.endPage != paging.lastPage}">
 		<a href="/SpringProject/board/board/boardList.do?nowPage=${paging.endPage+1}&cntPerPage=${paging.cntPerPage}">&gt;</a>
 	</c:if>
+	<c:if test="${sessionScope.userid != null}">
+<button type="button" id="listAdd">게시글작성</button>
+</c:if>
 </div>
 </body>
 </html>

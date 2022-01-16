@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@ include file="../include/menu.jsp"%>
 <table>
 	<tr>
 		<td>제목</td>

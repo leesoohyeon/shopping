@@ -10,5 +10,8 @@
 <body>
 <%@ include file="include/menu.jsp" %>
 <%@ include file="board/list.jsp" %>
+<div>
+	<button type="button" onclick="location.href='/SpringProject/board/board/list.do';">공지사항</button>
+</div>
 </body>
 </html>
