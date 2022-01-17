@@ -34,7 +34,7 @@
 			<li><a href="/SpringProject/shop/product/list.do">상품목록</a></li>
 			<li><a href="#">공지사항&자유게시판</a>
 				<ul>
-					<li><a href="#">공지사항</a></li>
+					<li><a href="/SpringProject/notice/list">공지사항</a></li>
 					<li><a href="/SpringProject/board/board/boardList.do">자유게시판</a></li>
 				</ul>
 			</li>

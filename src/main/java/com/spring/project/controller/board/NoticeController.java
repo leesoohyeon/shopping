@@ -11,6 +11,7 @@ import com.spring.project.model.board.NoticeDAO;
 import com.spring.project.model.board.NoticeDTO;
 
 @Controller
+@RequestMapping("/notice/*")
 public class NoticeController {
 
 	@Inject
@@ -36,7 +37,7 @@ public class NoticeController {
 	
 	@RequestMapping("detail/{idx}")
 	public ModelAndView detail(@PathVariable int idx, ModelAndView mav) {
-		mav.setViewName("/notice/notice_edit");
+		mav.setViewName("/notice/detail");
 		mav.addObject("dto", dao.detail(idx));
 		return mav;
 	}
