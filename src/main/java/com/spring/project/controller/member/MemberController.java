@@ -62,13 +62,18 @@ public class MemberController {
 		}else {
 			return new ModelAndView("member/login");
 		}
-		
-		
 	}
 	
 	@RequestMapping("update")
 	public String update(MemberDTO dto) {
 		memberDao.update(dto);
 		return "redirect:/";
+	}
+	
+	@RequestMapping("list")
+	public ModelAndView list(ModelAndView mav) {
+		mav.setViewName("member/list");
+		mav.addObject("list", memberDao.list());
+		return mav;
 	}
 }

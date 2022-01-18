@@ -1,9 +1,13 @@
 package com.spring.project.model.member;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+
+import com.spring.project.model.board.BoardDTO;
 
 @Repository
 public class MemberDAOImpl implements MemberDAO {
@@ -32,5 +36,9 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlSession.update("member.update", dto);
 	}
 	
+	@Override
+	public List<BoardDTO> list() {
+		return sqlSession.selectList("member.list");
+	}
 	
 }

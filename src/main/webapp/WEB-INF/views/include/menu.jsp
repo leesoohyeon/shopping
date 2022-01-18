@@ -23,8 +23,13 @@
 				<a href="/SpringProject/member/signUp.do">회원가입</a>
 			</c:when>
 			<c:otherwise>
+			<c:if test="${sessionScope.userid != null}">
 				<a href="/SpringProject/member/logout.do">로그아웃</a>
+				</c:if>
+				<c:if test="${sessionScope.adminid != null}">
 				<a href="/SpringProject/admin/logout.do">관리자 로그아웃</a>
+				<a href="/SpringProject/admin/memeberlist">회원목록</a>
+				</c:if>
 			</c:otherwise>
 		</c:choose>
 		</div>

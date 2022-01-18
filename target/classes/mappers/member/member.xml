@@ -20,4 +20,8 @@
 	<select id="profile" resultType="com.spring.project.model.member.MemberDTO">
 		select * from member where userid=#{userid}
 	</select>
+	
+	<select id="list" resultType="com.spring.project.model.member.MemberDTO">
+		select*from member order by name
+	</select>
 </mapper>
