@@ -10,4 +10,5 @@ public interface MemberDAO {
 	MemberDTO profile(String userid);
 	void update(MemberDTO dto);
 	List<BoardDTO> list();
+	void delete(String userid);
 }

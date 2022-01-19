@@ -70,10 +70,16 @@ public class MemberController {
 		return "redirect:/";
 	}
 	
-	@RequestMapping("list")
+	@RequestMapping("memberlist")
 	public ModelAndView list(ModelAndView mav) {
 		mav.setViewName("member/list");
 		mav.addObject("list", memberDao.list());
 		return mav;
+	}
+	
+	@RequestMapping("delete")
+	public String delete(String userid) {
+		memberDao.delete(userid);
+		return "redirect:/member/memberlist";
 	}
 }

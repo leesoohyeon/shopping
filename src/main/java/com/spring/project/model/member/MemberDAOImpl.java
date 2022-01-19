@@ -40,5 +40,12 @@ public class MemberDAOImpl implements MemberDAO {
 	public List<BoardDTO> list() {
 		return sqlSession.selectList("member.list");
 	}
+
+	@Override
+	public void delete(String userid) {
+		sqlSession.delete("member.delete", userid);
+	}
+	
+	
 	
 }

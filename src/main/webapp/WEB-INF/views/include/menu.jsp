@@ -28,7 +28,7 @@
 				</c:if>
 				<c:if test="${sessionScope.adminid != null}">
 				<a href="/SpringProject/admin/logout.do">관리자 로그아웃</a>
-				<a href="/SpringProject/admin/memeberlist">회원목록</a>
+				<a href="/SpringProject/member/memberlist">회원목록</a>
 				</c:if>
 			</c:otherwise>
 		</c:choose>

@@ -9,7 +9,26 @@
 </head>
 <body>
 <%@ include file="include/menu.jsp" %>
-<%@ include file="board/list.jsp" %>
 
+<h2>공지사항</h2>
+<table>
+	<tr>
+		<th>&nbsp;</th>
+		<th>제목</th>
+		<th>작성일</th>
+		<th>작성자</th>
+		<th>조회수</th>
+	</tr>
+	<c:forEach items="${list}" var="list">
+		<tr>
+			<td>${list.idx}</td>
+			<td><a href="/SpringProject/board/board/detail/${list.idx}">${list.title}</a></td>
+			<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${list.redate}"/></td>
+			<td>${list.writer}</td>
+			<td>${list.hit}</td>
+		</tr>
+	
+	</c:forEach>
+</table>
 </body>
 </html>

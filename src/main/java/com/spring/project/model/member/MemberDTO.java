@@ -1,5 +1,7 @@
 package com.spring.project.model.member;
 
+import java.util.Date;
+
 public class MemberDTO {
 	private String userid;
 	private String passwd;
@@ -7,7 +9,15 @@ public class MemberDTO {
 	private String email;
 	private String adress;
 	private String adminid;
+	private Date join_date;
 	
+	
+	public Date getJoin_date() {
+		return join_date;
+	}
+	public void setJoin_date(Date join_date) {
+		this.join_date = join_date;
+	}
 	public String getAdminid() {
 		return adminid;
 	}

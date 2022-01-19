@@ -24,4 +24,8 @@
 	<select id="list" resultType="com.spring.project.model.member.MemberDTO">
 		select*from member order by name
 	</select>
+	
+	<delete id="delete">
+		delete from member where userid=#{userid}
+	</delete>
 </mapper>
